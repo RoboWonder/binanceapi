@@ -1,5 +1,13 @@
 {
   "dependencies": {
     "ws": "^8.13.0"
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5"
   }
 }
