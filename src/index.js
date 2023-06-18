@@ -45,5 +45,3 @@ spot.on('orderTrade', (order) => {
 profit.on('profitUpdate', ({ symbol, profit }) => {
     sendTelegramMessage(formatOrder(order));
 });
-
-spot.connect();
