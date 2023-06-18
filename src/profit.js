@@ -1,5 +1,6 @@
 // profit.js
 import { EventEmitter } from 'events';
+import logger from './logger';
 
 class Profit extends EventEmitter {
     constructor() {

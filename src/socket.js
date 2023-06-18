@@ -2,6 +2,7 @@
 import WebSocket from 'ws';
 import Https from './https.js';
 import { EventEmitter } from 'events';
+import logger from './logger.js';
 
 class Socket extends EventEmitter {
     constructor() {

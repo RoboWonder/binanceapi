@@ -1,6 +1,7 @@
 // spot.js
 import { EventEmitter } from 'events';
 import Socket from './socket.js';
+import logger from './logger.js';
 
 class Spot extends EventEmitter {
     constructor() {

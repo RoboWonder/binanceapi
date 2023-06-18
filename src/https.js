@@ -2,6 +2,7 @@
 import https from 'https';
 import { config } from './config.js';
 import crypto from 'crypto';
+import logger from './logger.js';
 
 class Https {
     constructor() {
