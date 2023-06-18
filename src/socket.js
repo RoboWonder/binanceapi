@@ -3,6 +3,7 @@ import WebSocket from 'ws';
 import Https from './https.js';
 import { EventEmitter } from 'events';
 import logger from './logger.js';
+import { sendTelegramMessage } from './utils.js';
 
 class Socket extends EventEmitter {
     constructor() {
@@ -24,6 +25,7 @@ class Socket extends EventEmitter {
 
     onOpen() {
         logger.info('WebSocket connection opened');
+        sendTelegramMessage('-- STREAMING STARTED --');
 
         // Ping every 30 minutes to maintain the connection
         this.pingInterval = setInterval(() => {
@@ -49,6 +51,7 @@ class Socket extends EventEmitter {
         }
 
         // Reconnect when connection is closed
+        sendTelegramMessage('-- STREAMING CLOSED --');
         this.connect();
     }
 

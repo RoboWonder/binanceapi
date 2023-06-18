@@ -17,6 +17,7 @@ function formatOrder(order) {
         Status: ${order.X}
     `;
 }
+sendTelegramMessage('-- BOT STARTED --');
 
 spot.on('orderNew', (order) => {
     // profit.onOrderUpdate(order);
