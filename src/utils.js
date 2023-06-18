@@ -8,7 +8,6 @@ export function sendTelegramMessage(text) {
         chat_id: config.telegram.chatId,
         text: text
     });
-
     const options = {
         hostname: 'api.telegram.org',
         port: 443,
