@@ -17,6 +17,14 @@ function formatOrder(order) {
         Status: ${order.X}
     `;
 }
+function formatProfitUpdate(profitUpdate) {
+    return `
+Profit Update:
+Symbol: ${profitUpdate.symbol}
+Profit: ${profitUpdate.profit.toFixed(2)}
+`;
+}
+
 sendTelegramMessage('-- BOT STARTED --');
 
 spot.on('orderNew', (order) => {
@@ -43,6 +51,6 @@ spot.on('orderTrade', (order) => {
     sendTelegramMessage(formatOrder(order));
 });
 
-profit.on('profitUpdate', ({ symbol, profit }) => {
-    sendTelegramMessage(formatOrder(order));
+profit.on('profitUpdate', (e) => {
+    sendTelegramMessage(formatProfitUpdate(e));
 });

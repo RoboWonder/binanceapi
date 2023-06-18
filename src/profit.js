@@ -47,7 +47,7 @@ class Profit extends EventEmitter {
         const profit = sellRevenue - (sellAmount / buyAmount) * buyCost;
         logger.info(`Profit update for ${symbol}: ${profit}`);
         
-        this.emit('profitUpdate', {
+        sellRevenue && this.emit('profitUpdate', {
             symbol: symbol,
             profit: profit
         });
